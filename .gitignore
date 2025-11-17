@@ -1,0 +1,16 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.pdb
+bin/
+obj/
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# Packages
+*.nupkg
+*.snupkg
