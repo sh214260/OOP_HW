@@ -1,15 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Project1
+class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        long step = 10_000_000; // נעלה כל פעם ב־10 מיליון תאים
+        for (long size = step; size < int.MaxValue; size += step)
         {
+            try
+            {
+                Console.Write($"מנסה להקצות מערך בגודל {size:N0} ... ");
+                int[] arr = new int[size];
+                Console.WriteLine("הצליח");
+            }
+            catch (OutOfMemoryException)
+            {
+                Console.WriteLine("נכשל – OutOfMemoryException");
+                break;
+            }
         }
     }
 }
